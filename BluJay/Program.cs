@@ -10,9 +10,14 @@ namespace BluJay
     {
         static void Main()
         {
+            TrafficLight tl = new TrafficLight();
             Console.WriteLine("Welcome to a traffic accident waiting to happen!");
             ChooseCar();
+            Console.WriteLine("Up ahead a traffic light is " + tl.trafficLightColor);
+            Console.WriteLine("don't end yet");
+            Console.ReadLine();
         }
+
         static void ChooseCar()
         {
             Console.WriteLine("Which car would you like to drive? enter 1 for an 18 wheeler semi, enter 2 for an SUV");
