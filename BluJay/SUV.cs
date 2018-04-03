@@ -8,5 +8,9 @@ namespace BluJay
 {
     class SUV
     {
+        public SUV()
+        {
+
+        }
     }
 }

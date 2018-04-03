@@ -8,7 +8,7 @@ namespace BluJay
 {
     class TrafficLight
     {
-        public int trafficLightState = 1;
+        public int trafficLightState = 0;
         public string trafficLightColor;
         List<string> TrafficLights = new List<string>() { "Green", "Yellow", "Red", "Left-Turn-Green" }; 
 

@@ -13,10 +13,10 @@ namespace BluJay
 
         public Semi()
         {
-            direction = UserDirection();
+            direction = SemiDirection();
         }
 
-        public int UserDirection()
+        public int SemiDirection()
         {
             Console.WriteLine("Which direction would you like to go?\nEnter 1 for moving foward \nEnter 2 to turn left\n Enter 3 to turn right\nEnter 4 to jackknife to a stop");
             if (int.TryParse(Console.ReadLine(), out int userInput))
@@ -35,7 +35,7 @@ namespace BluJay
                         else
                         {
                             Console.WriteLine("Error! Experiencing some highway hypnosis friend? You are already moving forward. Please try a different direction.");
-                            UserDirection();
+                            SemiDirection();
                             break;
                         }
                     case 2: //turn left
@@ -48,7 +48,7 @@ namespace BluJay
                         else
                         {
                             Console.WriteLine("You can't turn yet, your trailer is still jack knifed. Try moving forward first.");
-                            UserDirection();
+                            SemiDirection();
                             break;
                         }
                     case 3: //turn right
@@ -61,7 +61,7 @@ namespace BluJay
                         else
                         {
                             Console.WriteLine("You can't turn yet, your trailer is still jack knifed. Try moving forward first.");
-                            UserDirection();
+                            SemiDirection();
                             break;
                         }
                     case 4: //jack knife to a stop
@@ -78,14 +78,14 @@ namespace BluJay
                         }
                     default:
                         Console.WriteLine("please make sure toenter a numeric between 1-4.");
-                        UserDirection();
+                        SemiDirection();
                         break;
                 }
             }
             else
             {
                 Console.WriteLine("Please only enter a numeric keystroke and hit enter.");
-                UserDirection();
+                SemiDirection();
                 return direction;
             }
             return -1;
