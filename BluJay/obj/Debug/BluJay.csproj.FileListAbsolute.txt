@@ -1,0 +1,7 @@
+C:\Users\adamt\source\repos\BluJay\BluJay\bin\Debug\BluJay.exe.config
+C:\Users\adamt\source\repos\BluJay\BluJay\bin\Debug\BluJay.exe
+C:\Users\adamt\source\repos\BluJay\BluJay\bin\Debug\BluJay.pdb
+C:\Users\adamt\source\repos\BluJay\BluJay\obj\Debug\BluJay.csprojResolveAssemblyReference.cache
+C:\Users\adamt\source\repos\BluJay\BluJay\obj\Debug\BluJay.csproj.CoreCompileInputs.cache
+C:\Users\adamt\source\repos\BluJay\BluJay\obj\Debug\BluJay.exe
+C:\Users\adamt\source\repos\BluJay\BluJay\obj\Debug\BluJay.pdb
