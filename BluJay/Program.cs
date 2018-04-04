@@ -10,17 +10,15 @@ namespace BluJay
     {
         static void Main()
         {
-            string currentCar = "no car";
             Semi s = new Semi();
             SUV suv = new SUV();
+            string currentCar = "";
 
             Console.WriteLine("Welcome to a traffic accident waiting to happen!");
-            ChooseCar(currentCar);
-            ShowMenu(s, suv, currentCar);
-            
+            ChooseCar(s, suv, currentCar);
         }
 
-        public static string ChooseCar(string currentCar)
+        public static string ChooseCar(Semi s, SUV suv, string currentCar)
         {
             Console.WriteLine("Which car would you like to drive?\n" + 
                               "1) for an 18 wheeler semi\n" + 
@@ -30,18 +28,18 @@ namespace BluJay
                 if (carChoice == 1)
                 {
                     currentCar = "semi";
-                    return currentCar;
+                    ShowMenu(s, suv, currentCar);
                 }
                 else if (carChoice == 2)
                 {
                     currentCar = "suv";
-                    return currentCar;
+                    ShowMenu(s, suv, currentCar);
                 }
             }
             else
             {
                 Console.WriteLine("Oh no! Maybe roadrage has clouded your ability to answer correctly. Please make sure to only enter a numeric 1 or 2.");
-                ChooseCar(currentCar);
+                ChooseCar(s, suv, currentCar);
             }
             return "-1";
         }
