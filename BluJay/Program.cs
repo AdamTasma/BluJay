@@ -70,7 +70,8 @@ namespace BluJay
                         break;
                     case 2:
                         tl.trafficLightState++;
-                        Console.WriteLine();
+                        tl.TrafficLight();
+                        Console.WriteLine("\nUp ahead a traffic light is " + tl.trafficLightColor + ".");
                         break;
                     case 3:
                         ChooseCar(s, suv, currentCar);

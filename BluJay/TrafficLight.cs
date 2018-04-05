@@ -15,6 +15,7 @@ namespace BluJay
         public TrafficLight()
         {
             trafficLightColor = TrafficLightChange(trafficLightState);
+            //return trafficLightColor;
         }
 
         public string TrafficLightChange(int trafficLightState)
