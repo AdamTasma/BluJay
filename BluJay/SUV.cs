@@ -15,7 +15,7 @@ namespace BluJay
 
         }
 
-        void SuvDirection()
+        public void SuvDirection()
         {
             Console.WriteLine("What direction would you like to go?\n" +
                               "1) Move forward\n" +

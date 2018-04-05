@@ -8,18 +8,12 @@ namespace BluJay
 {
     class Semi
     {
-        int direction;
         int previousDirection;
 
         public Semi()
         {
 
         }
-
-        //public Semi()
-        //{
-        //    direction = SemiDirection();
-        //}
 
         public int SemiDirection()
         {
@@ -28,11 +22,9 @@ namespace BluJay
                               "2) Turn left\n" +
                               "3) Turn right\n" +
                               "4) Jack knife to a stop");
-            if (int.TryParse(Console.ReadLine(), out int userInput))
+            if (int.TryParse(Console.ReadLine(), out int direction))
             {
-                direction = userInput;
-
-                switch (userInput)
+                switch (direction)
                 {
                     case 1: //move forward
                         if (previousDirection != 1)

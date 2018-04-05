@@ -59,13 +59,29 @@ namespace BluJay
                 switch (UserInput)
                 {
                     case 1:
-                        s.SemiDirection();
+                        if (currentCar == "semi")
+                        {
+                            s.SemiDirection();
+                        }
+                        else if(currentCar == "suv")
+                        {
+                            suv.SuvDirection();
+                        }
                         break;
                     case 2:
+                        tl.trafficLightState++;
                         Console.WriteLine();
                         break;
+                    case 3:
+                        ChooseCar(s, suv, currentCar);
+                        break;
+                    case 4:
+                        Console.WriteLine("\nLogging you out.");
+                        System.Threading.Thread.Sleep(500);
+                        Environment.Exit(0);
+                        break;
                     default:
-                        Console.WriteLine();
+                        Console.WriteLine("-1");
                         break;
                 }
                 ShowMenu(s, suv, currentCar);
