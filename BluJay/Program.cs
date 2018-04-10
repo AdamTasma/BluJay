@@ -10,16 +10,16 @@ namespace BluJay
     {
         static void Main()
         {
+            TrafficLight tl = new TrafficLight();
             Semi s = new Semi();
             SUV suv = new SUV();
-
             string currentCar = "";
 
             Console.WriteLine("Welcome to a traffic accident waiting to happen!");
-            ChooseCar(s, suv, currentCar);
+            ChooseCar(s, suv, tl, currentCar);
         }
 
-        public static string ChooseCar(Semi s, SUV suv, string currentCar)
+        public static string ChooseCar(Semi s, SUV suv, TrafficLight tl, string currentCar)
         {
             Console.WriteLine("Which car would you like to drive?\n" + 
                               "1) for an 18 wheeler semi\n" + 
@@ -29,30 +29,29 @@ namespace BluJay
                 if (carChoice == 1)
                 {
                     currentCar = "semi";
-                    ShowMenu(s, suv, currentCar);
+                    ShowMenu(s, suv, tl, currentCar);
                 }
                 else if (carChoice == 2)
                 {
                     currentCar = "suv";
-                    ShowMenu(s, suv, currentCar);
+                    ShowMenu(s, suv, tl, currentCar);
                 }
                 else
                 {
                     Console.WriteLine("Please enter either 1 or 2.");
-                    ChooseCar(s, suv, currentCar);
+                    ChooseCar(s, suv, tl, currentCar);
                 }
             }
             else
             {
                 Console.WriteLine("Oh no! Maybe roadrage has clouded your ability to answer correctly. Please make sure to only enter a numeric 1 or 2.");
-                ChooseCar(s, suv, currentCar);
+                ChooseCar(s, suv, tl, currentCar);
             }
             return "-1";
         }
 
-        public static void ShowMenu(Semi s, SUV suv, string currentCar)
+        public static void ShowMenu(Semi s, SUV suv, TrafficLight tl, string currentCar)
         {
-            TrafficLight tl = new TrafficLight();
             Console.WriteLine("\nYou are driving the " + currentCar + ".");
             Console.WriteLine("Up ahead a traffic light is " + tl.trafficLightColor + ".");
             System.Threading.Thread.Sleep(100);
@@ -68,20 +67,19 @@ namespace BluJay
                     case 1:
                         if (currentCar == "semi")
                         {
-                            s.SemiDirection();
+                            s.SemiDirection(tl.trafficLightState);
                         }
                         else if(currentCar == "suv")
                         {
-                            suv.SuvDirection();
+                            suv.SuvDirection(tl.trafficLightState);
                         }
                         break;
                     case 2:
                         tl.trafficLightState++;
                         tl.TrafficLightChange(tl.trafficLightState);
-                        //Console.WriteLine("\nUp ahead a traffic light is " + tl.trafficLightColor + ".");
                         break;
                     case 3:
-                        ChooseCar(s, suv, currentCar);
+                        ChooseCar(s, suv, tl, currentCar);
                         break;
                     case 4:
                         Console.WriteLine("\nLogging you out.");
@@ -92,12 +90,12 @@ namespace BluJay
                         Console.WriteLine("-1");
                         break;
                 }
-                ShowMenu(s, suv, currentCar);
+                ShowMenu(s, suv, tl, currentCar);
             }
             else
             {
                 Console.WriteLine("Please enter a numeric number that corresponds with your options.");
-                ShowMenu(s, suv, currentCar);
+                ShowMenu(s, suv, tl, currentCar);
             }
         }
     }

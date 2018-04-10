@@ -15,7 +15,7 @@ namespace BluJay
 
         }
 
-        public void SuvDirection()
+        public void SuvDirection(int trafficLightState)
         {
             Console.WriteLine("What direction would you like to go?\n" +
                               "1) Move forward\n" +
@@ -35,19 +35,19 @@ namespace BluJay
                         else
                         {
                             Console.WriteLine("\nError! Experiencing some highway hypnosis friend? You are already moving forward. Please try a different direction.");
-                            SuvDirection();
+                            SuvDirection(trafficLightState);
                         }
                         break;
                     case 2: //turn left
-                        if (true)
+                        if (trafficLightState == 3)
                         {
-                            Console.WriteLine("After waiting for the light to change, you turn left at the intersection.");
+                            Console.WriteLine("\nAfter waiting for the light to change, you turn left at the intersection.");
                             previousDirection = 2;
                         }
                         else
                         {
                             Console.WriteLine("You are unable to turn left at the intersection, perhaps you should wait for the right of way.");
-                            SuvDirection();
+                            SuvDirection(trafficLightState);
                         }
                         break;
                     case 3:
@@ -71,7 +71,7 @@ namespace BluJay
             else
             {
                 Console.WriteLine("Unable to understand input, please enter a numeric between 1-4");
-                SuvDirection();
+                SuvDirection(trafficLightState);
             }
         }
     }

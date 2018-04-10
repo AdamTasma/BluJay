@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BluJay
 {
-    class TrafficLight
+    public class TrafficLight
     {
         public int trafficLightState = 0;
         public string trafficLightColor;
@@ -19,20 +19,15 @@ namespace BluJay
 
         public string TrafficLightChange(int trafficLightState)
         {
-            if(trafficLightState > TrafficLights.Count())
+            if(trafficLightState > 3)
             {
                 trafficLightState = 0;
-                Console.WriteLine("You waited so long the traffic light turned green again.");
+                System.Threading.Thread.Sleep(300);
+                Console.WriteLine("\nYou waited so long the traffic light turned green again.");
             }
 
             trafficLightColor = TrafficLights[trafficLightState];
             return trafficLightColor;
         }
-
-        //public string TrafficLightChange(int trafficLightState)
-        //{
-        //    trafficLightColor = TrafficLights[trafficLightState];
-        //    return trafficLightColor;
-        //}
     }
 }
